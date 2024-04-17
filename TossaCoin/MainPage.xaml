@@ -10,6 +10,11 @@
                 Spacing="25"
                 Orientation="Vertical">
 
+                <Label
+                    Text="Vamos jogar cara ou coroa?"
+                    FontAttributes="Bold"
+                    FontSize="Large"/>
+
                 <Image x:Name="coin"
                        Source="https://images.tcdn.com.br/img/img_prod/1083822/1_real_2a_familia_fc_1673_1_30e390b3f0e4d72f51dea93dd4b52002.png"
                        WidthRequest="200"
