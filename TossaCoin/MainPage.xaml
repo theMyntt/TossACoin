@@ -3,22 +3,41 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TossaCoin.MainPage">
 
-    <StackLayout>
-        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
-        </Frame>
-        <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
-        <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="30,0,30,0"/>
-        <Label FontSize="16" Padding="30,24,30,0">
-            <Label.FormattedText>
-                <FormattedString>
-                    <FormattedString.Spans>
-                        <Span Text="Learn more at "/>
-                        <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
-                    </FormattedString.Spans>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
-    </StackLayout>
+    <ScrollView>
+        <FlexLayout AlignItems="Center" JustifyContent="Center">
+            <StackLayout
+                Padding="30,0"
+                Spacing="25"
+                Orientation="Vertical">
+
+                <Image x:Name="coin"
+                       Source="https://images.tcdn.com.br/img/img_prod/1083822/1_real_2a_familia_fc_1673_1_30e390b3f0e4d72f51dea93dd4b52002.png"
+                       WidthRequest="200"
+                       HeightRequest="200"/>
+
+                <Label x:Name="result"/>
+
+                <Picker
+                    Title="Selecione a face da moeda."
+                    x:Name="picker">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Cara</x:String>
+                            <x:String>Coroa</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+
+                <Button
+                    Text="JOGAR"
+                    Clicked="tossACoin"
+                    BackgroundColor="#4F4F4F"
+                    TextColor="White"
+                    CornerRadius="10"/>
+
+            </StackLayout>
+        </FlexLayout>
+
+    </ScrollView>
 
 </ContentPage>
